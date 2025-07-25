@@ -1,8 +1,6 @@
 name: README.pretty
 
 on:
-  push:
-    branches: [ "main" ]
   schedule:
     - cron: "0 */24 * * *"
   workflow_dispatch:
@@ -42,7 +40,7 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
         run:
           cd profile
-          python ../src/update_readme.py
+          python ../src/pretty.py
       
       - name: Commit changes
         run:
